@@ -69,6 +69,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		860D97132A7A401E00E1FD72 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		860D97142A7A404200E1FD72 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F9BF20DA2A6A896E006C0C49 /* ShackleHotelBuddyApp.swift */,
+				F9BF20DC2A6A896E006C0C49 /* ContentView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		860D97152A7A406400E1FD72 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F9BF20DE2A6A8970006C0C49 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		F9BF20CE2A6A896E006C0C49 = {
 			isa = PBXGroup;
 			children = (
@@ -92,9 +116,9 @@
 		F9BF20D92A6A896E006C0C49 /* ShackleHotelBuddy */ = {
 			isa = PBXGroup;
 			children = (
-				F9BF20DA2A6A896E006C0C49 /* ShackleHotelBuddyApp.swift */,
-				F9BF20DC2A6A896E006C0C49 /* ContentView.swift */,
-				F9BF20DE2A6A8970006C0C49 /* Assets.xcassets */,
+				860D97152A7A406400E1FD72 /* Resources */,
+				860D97142A7A404200E1FD72 /* Common */,
+				860D97132A7A401E00E1FD72 /* Screens */,
 			);
 			path = ShackleHotelBuddy;
 			sourceTree = "<group>";
