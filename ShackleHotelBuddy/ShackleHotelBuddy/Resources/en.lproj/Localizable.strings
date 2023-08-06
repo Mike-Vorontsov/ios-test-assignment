@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  ShackleHotelBuddy
+
+  Created by Mykhailo Vorontsov on 02/08/2023.
+  
+*/
+"Home.Text.Header" = "Select guests, date and time";
+"Home.Text.Recent" = "Recent searches";
+"Home.Button.Search" = "Search";
+
+"Home.Label.Childrens" = "Childrens";
+"Home.Label.Adults" = "Adults";
+"Home.Label.Checkin" = "CheckIn";
+"Home.Label.Checkout" = "CheckOut";
+
+"Home.Placeholder.Checkin" = "DD/MM/YYYY";
+"Home.Placeholder.Checkout" = "DD/MM/YYYY";
