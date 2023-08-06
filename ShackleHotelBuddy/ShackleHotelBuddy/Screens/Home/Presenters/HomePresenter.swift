@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Foundation
 
 protocol HomePresenting {
     var homeViewModel: HomeViewModel { get }
@@ -14,9 +15,15 @@ protocol HomePresenting {
 
 final class HomePresenter: HomePresenting {
     
+    let apiService: ListApiFetching
+    
     private var bag: Set<AnyCancellable> = []
     
     var homeViewModel: HomeViewModel = HomeViewModel()
+    
+    init(apiService: ListApiFetching) {
+        self.apiService = apiService
+    }
     
     func setup() {
         homeViewModel.searchButtonAction
@@ -27,7 +34,14 @@ final class HomePresenter: HomePresenting {
     }
     
     private func search() {
-        // TODO: implement search mechanic based on SearchViewModel
+        apiService
+            .fetchList(with: .init(resultsStartingIndex: 0))
+            .sink { completion in
+                print("Completed: \(completion)")
+            } receiveValue: { value in
+                print("Value: \(value)")
+            }
+            .store(in: &bag)
     }
     
 }

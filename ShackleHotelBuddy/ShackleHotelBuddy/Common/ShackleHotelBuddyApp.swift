@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct ShackleHotelBuddyApp: App {
+    init() {
+        self.init(homePresenter: Injector.shared.homePresenter)
+    }
     
-    let homePresenter: HomePresenter = .init()
+    private let homePresenter: HomePresenting
     
+    init(homePresenter: HomePresenting) {
+        self.homePresenter = homePresenter
+    }
+  
     var body: some Scene {
         WindowGroup {
             HomeView(viewModel: homePresenter.homeViewModel)
