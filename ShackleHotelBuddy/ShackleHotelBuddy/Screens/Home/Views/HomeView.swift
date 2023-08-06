@@ -22,6 +22,13 @@ struct Consts {
 }
 
 struct HomeView: View {
+    
+    @ObservedObject var viewModel: HomeViewModel
+
+    init(viewModel: HomeViewModel = .init()) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
         VStack{
             HStack{
@@ -42,10 +49,10 @@ struct HomeView: View {
                 .foregroundColor(Color.white)
             
             Spacer()
-            SearchView()
+            SearchView(viewModel: viewModel.searchViewModel)
             Spacer()
             Button {
-                // TODO: Action
+                viewModel.searchButtonAction.send()
             } label: { Text(String.Localized.Home.searchButton.localized)
                     .frame(maxWidth: .infinity)
                     .frame(height: Consts.UI.Button.height)

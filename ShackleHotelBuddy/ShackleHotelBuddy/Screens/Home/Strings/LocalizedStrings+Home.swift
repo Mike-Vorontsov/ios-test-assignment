@@ -15,7 +15,7 @@ extension String.Localized {
         case searchButton = "Home.Button.Search"
                 
         enum Label: String, Localizable {
-            case childrens = "Home.Label.Childrens"
+            case children = "Home.Label.Children"
             case adults = "Home.Label.Adults"
             case checkin = "Home.Label.Checkin"
             case checkout = "Home.Label.Checkout"

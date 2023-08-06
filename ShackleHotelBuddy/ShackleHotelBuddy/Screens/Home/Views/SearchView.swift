@@ -15,9 +15,12 @@ struct HDivider: View {
 }
 
 struct SearchView: View {
-    @State private var t1 = ""
-    @State private var t2 = "1"
+    @ObservedObject var viewModel: SearchViewModel
 
+    init(viewModel: SearchViewModel = .init()) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
         Grid{
             GridRow{
@@ -26,7 +29,7 @@ struct SearchView: View {
                     Text(String.Localized.Home.Label.checkin.localized)
                 }
                 Spacer()
-                TextField(String.Localized.Home.Placeholder.checkin.localized, text: $t1)
+                TextField(String.Localized.Home.Placeholder.checkin.localized, text: $viewModel.checkin)
             }
             Divider()
             GridRow{
@@ -35,7 +38,7 @@ struct SearchView: View {
                     Text(String.Localized.Home.Label.checkout.localized)
                 }
                 Spacer()
-                TextField(String.Localized.Home.Placeholder.checkout.localized, text: $t1)                            }
+                TextField(String.Localized.Home.Placeholder.checkout.localized, text: $viewModel.checkout)                            }
             Divider()
             GridRow{
                 HStack{
@@ -43,22 +46,22 @@ struct SearchView: View {
                     Text(String.Localized.Home.Label.adults.localized)
                 }
                 Spacer()
-                TextField("", text: $t2)
+                TextField("", text: $viewModel.adults)
             }
             Divider()
             GridRow{
                 HStack{
                     Image("icons/supervisor_account")
-                    Text(String.Localized.Home.Label.childrens.localized)
+                    Text(String.Localized.Home.Label.children.localized)
                 }
                 Spacer()
-                TextField("", text: $t2)
+                TextField("", text: $viewModel.children)
             }
         }
-        .frame(height: 208.0)
+        .frame(height: Consts.UI.Search.height)
         .background(.white)
         .cornerRadius(Consts.UI.Fields.cornerRadius)
-    }        
+    }
 }
 
 struct SearchView_Previews: PreviewProvider {
@@ -71,4 +74,8 @@ extension Consts.UI {
     struct Fields {
         static let cornerRadius = 16.0
     }
+    struct Search {
+        static let height = 208.0
+    }
+                            
 }
