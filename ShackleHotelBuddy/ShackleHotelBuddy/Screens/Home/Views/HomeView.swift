@@ -30,36 +30,44 @@ struct HomeView: View {
     }
     
     var body: some View {
-        VStack{
-            HStack{
-                Image("images/logo")
-                Spacer()
-                Image("icons/person")
-                    .resizable()
-                    .frame(width: Consts.UI.Icon.iconSize, height: Consts.UI.Icon.iconSize)
+        ZStack{
+            VStack{
+                HStack{
+                    Image("images/logo")
+                    Spacer()
+                    Image("icons/person")
+                        .resizable()
+                        .frame(width: Consts.UI.Icon.iconSize, height: Consts.UI.Icon.iconSize)
+                    
+                        .background(.gray)
+                        .cornerRadius(Consts.UI.Icon.corerRadius)
+                }
                 
-                    .background(.gray)
-                    .cornerRadius(Consts.UI.Icon.corerRadius)
-            }
-            
-            Spacer()
-            
-            Text(String.Localized.Home.header.localized)
-                .font(.largeTitle)
-                .foregroundColor(Color.white)
-            
-            Spacer()
-            SearchView(viewModel: viewModel.searchViewModel)
-            Spacer()
-            Button {
-                viewModel.searchButtonAction.send()
-            } label: { Text(String.Localized.Home.searchButton.localized)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: Consts.UI.Button.height)
-                    .cornerRadius(Consts.UI.Fields.cornerRadius)
-            }
+                Spacer()
+                
+                Text(String.Localized.Home.header.localized)
+                    .font(.largeTitle)
+                    .foregroundColor(Color.white)
+                
+                Spacer()
+                SearchView(viewModel: viewModel.searchViewModel)
+                Spacer()
+                Button {
+                    viewModel.searchButtonAction.send()
+                } label: { Text(String.Localized.Home.searchButton.localized)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: Consts.UI.Button.height)
+                        .cornerRadius(Consts.UI.Fields.cornerRadius)
+                }
                 .buttonStyle(.borderedProminent)
-            Spacer()
+                .disabled(!viewModel.isSearchButtonEnabled)
+                Spacer()
+            }
+            .opacity( viewModel.isActivityIndicatorSpinning ? 0.5 : 1.0)
+            
+            if viewModel.isActivityIndicatorSpinning {
+                Text("Loading")
+            }
         }
         .padding(SwiftUI.EdgeInsets(top: 0, leading: Consts.UI.padding, bottom: 0, trailing: Consts.UI.padding))
         .background(

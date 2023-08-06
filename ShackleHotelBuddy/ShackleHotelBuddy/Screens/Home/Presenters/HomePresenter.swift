@@ -33,10 +33,19 @@ final class HomePresenter: HomePresenting {
             .store(in: &bag)
     }
     
+    private func togglehSearch(to enabled: Bool) {
+        homeViewModel.isSearchButtonEnabled = enabled
+        homeViewModel.isActivityIndicatorSpinning = !enabled
+    }
+    
     private func search() {
+        togglehSearch(to: false)
         apiService
             .fetchList(with: .init(resultsStartingIndex: 0))
-            .sink { completion in
+            .eraseToAnyPublisher()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] completion in
+                self?.togglehSearch(to: true)
                 print("Completed: \(completion)")
             } receiveValue: { value in
                 print("Value: \(value)")

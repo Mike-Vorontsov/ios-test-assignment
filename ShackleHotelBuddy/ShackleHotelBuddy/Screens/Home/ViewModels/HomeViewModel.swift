@@ -10,5 +10,8 @@ import Combine
 final class HomeViewModel: ObservableObject {
     let searchViewModel: SearchViewModel = .init()
     
+    @Published var isActivityIndicatorSpinning: Bool = false
+    @Published var isSearchButtonEnabled: Bool = true
+    
     let searchButtonAction: PassthroughSubject<Void, Never> = .init()
 }
