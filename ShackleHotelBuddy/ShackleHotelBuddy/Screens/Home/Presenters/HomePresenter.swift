@@ -16,13 +16,16 @@ protocol HomePresenting {
 final class HomePresenter: HomePresenting {
     
     let apiService: ListApiFetching
+    let coordinator: Coordinator
     
     private var bag: Set<AnyCancellable> = []
     
     var homeViewModel: HomeViewModel = HomeViewModel()
-    
-    init(apiService: ListApiFetching) {
+    var resultsViewModel: HotelListViewModel = HotelListViewModel(cells: [])
+
+    init(apiService: ListApiFetching, coordinator: Coordinator) {
         self.apiService = apiService
+        self.coordinator = coordinator
     }
     
     func setup() {
@@ -44,10 +47,26 @@ final class HomePresenter: HomePresenting {
             .fetchList(with: .init(resultsStartingIndex: 0))
             .eraseToAnyPublisher()
             .receive(on: DispatchQueue.main)
+            .map {
+                $0.data.propertySearch.properties.map {
+                    HotelCellViewModel(
+                        id: $0.id,
+                        name: $0.name,
+                        imageUrl: $0.propertyImage.image.url ,
+                        rating: "",
+                        location: "",
+                        price: ""
+                    )
+                }
+            }
             .sink { [weak self] completion in
                 self?.togglehSearch(to: true)
                 print("Completed: \(completion)")
-            } receiveValue: { value in
+                if case .finished =  completion {
+                    self?.coordinator.showResults = true
+                }
+            } receiveValue: { [weak self] value in
+                self?.resultsViewModel.cells = value
                 print("Value: \(value)")
             }
             .store(in: &bag)

@@ -21,10 +21,15 @@ struct ShackleHotelBuddyApp: App {
   
     var body: some Scene {
         WindowGroup {
-            HomeView(viewModel: homePresenter.homeViewModel)
+            RootView(coordinator: Injector.shared.coordinator)
                 .onAppear {
                     homePresenter.setup()
                 }
+            
+//            HomeView(viewModel: homePresenter.homeViewModel)
+//                .onAppear {
+//                    homePresenter.setup()
+//                }
         }
     }
 }

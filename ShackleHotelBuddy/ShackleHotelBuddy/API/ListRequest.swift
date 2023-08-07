@@ -9,8 +9,29 @@ import Foundation
 
 struct ListRequest: ApiRequestable {
     
+    
     struct ResponseType: Decodable {
-        let dataX: String?
+        struct Content: Decodable {
+            let propertySearch: SearchResult
+        }
+        struct SearchResult: Decodable {
+            let properties: [Property]
+        }
+        struct Property: Decodable {
+            let id: String
+            let name: String
+            let propertyImage: PropertyImage
+        }
+        
+        struct PropertyImage: Decodable {
+            let image: Image
+        }
+        
+        struct Image: Decodable {
+            let url: URL
+        }
+        
+        let data: Content
     }
     
     struct ApiDate: Codable {

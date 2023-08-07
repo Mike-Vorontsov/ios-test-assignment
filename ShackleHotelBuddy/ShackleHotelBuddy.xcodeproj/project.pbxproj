@@ -19,6 +19,13 @@
 		863F8BC42A800E3B006972C7 /* ListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863F8BC32A800E3B006972C7 /* ListRequest.swift */; };
 		86B8CFF22A804BB500ED7CF4 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8CFF12A804BB500ED7CF4 /* ApiService.swift */; };
 		86B8CFF52A804FDB00ED7CF4 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8CFF42A804FDB00ED7CF4 /* Module.swift */; };
+		86B8CFF82A80573300ED7CF4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8CFF72A80573300ED7CF4 /* Coordinator.swift */; };
+		86B8CFFA2A80575A00ED7CF4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8CFF92A80575A00ED7CF4 /* RootView.swift */; };
+		86B8CFFD2A80613400ED7CF4 /* HotelCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8CFFC2A80613400ED7CF4 /* HotelCellView.swift */; };
+		86B8CFFF2A80659400ED7CF4 /* HotelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8CFFE2A80659400ED7CF4 /* HotelListView.swift */; };
+		86B8D0032A80661000ED7CF4 /* HotelCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8D0022A80661000ED7CF4 /* HotelCellViewModel.swift */; };
+		86B8D0052A80666A00ED7CF4 /* HotelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8D0042A80666A00ED7CF4 /* HotelListViewModel.swift */; };
+		86B8D0082A80716C00ED7CF4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 86B8D0072A80716C00ED7CF4 /* Kingfisher */; };
 		F9BF20DB2A6A896E006C0C49 /* ShackleHotelBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BF20DA2A6A896E006C0C49 /* ShackleHotelBuddyApp.swift */; };
 		F9BF20DF2A6A8970006C0C49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9BF20DE2A6A8970006C0C49 /* Assets.xcassets */; };
 		F9BF20EC2A6A8971006C0C49 /* ShackleHotelBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BF20EB2A6A8971006C0C49 /* ShackleHotelBuddyTests.swift */; };
@@ -56,6 +63,12 @@
 		863F8BC32A800E3B006972C7 /* ListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRequest.swift; sourceTree = "<group>"; };
 		86B8CFF12A804BB500ED7CF4 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		86B8CFF42A804FDB00ED7CF4 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
+		86B8CFF72A80573300ED7CF4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		86B8CFF92A80575A00ED7CF4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		86B8CFFC2A80613400ED7CF4 /* HotelCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelCellView.swift; sourceTree = "<group>"; };
+		86B8CFFE2A80659400ED7CF4 /* HotelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelListView.swift; sourceTree = "<group>"; };
+		86B8D0022A80661000ED7CF4 /* HotelCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelCellViewModel.swift; sourceTree = "<group>"; };
+		86B8D0042A80666A00ED7CF4 /* HotelListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelListViewModel.swift; sourceTree = "<group>"; };
 		F9BF20D72A6A896E006C0C49 /* ShackleHotelBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShackleHotelBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9BF20DA2A6A896E006C0C49 /* ShackleHotelBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShackleHotelBuddyApp.swift; sourceTree = "<group>"; };
 		F9BF20DE2A6A8970006C0C49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86B8D0082A80716C00ED7CF4 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +108,8 @@
 		860D97132A7A401E00E1FD72 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				86B8CFFB2A80611200ED7CF4 /* List */,
+				86B8CFF62A80572400ED7CF4 /* Coordinator */,
 				860D97162A7A418600E1FD72 /* Home */,
 			);
 			path = Screens;
@@ -187,6 +203,42 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
+		86B8CFF62A80572400ED7CF4 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				86B8CFF72A80573300ED7CF4 /* Coordinator.swift */,
+				86B8CFF92A80575A00ED7CF4 /* RootView.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		86B8CFFB2A80611200ED7CF4 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				86B8D0012A8065F800ED7CF4 /* ViewModels */,
+				86B8D0002A8065F300ED7CF4 /* Views */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		86B8D0002A8065F300ED7CF4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				86B8CFFC2A80613400ED7CF4 /* HotelCellView.swift */,
+				86B8CFFE2A80659400ED7CF4 /* HotelListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		86B8D0012A8065F800ED7CF4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				86B8D0022A80661000ED7CF4 /* HotelCellViewModel.swift */,
+				86B8D0042A80666A00ED7CF4 /* HotelListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		F9BF20CE2A6A896E006C0C49 = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +305,9 @@
 			dependencies = (
 			);
 			name = ShackleHotelBuddy;
+			packageProductDependencies = (
+				86B8D0072A80716C00ED7CF4 /* Kingfisher */,
+			);
 			productName = ShackleHotelBuddy;
 			productReference = F9BF20D72A6A896E006C0C49 /* ShackleHotelBuddy.app */;
 			productType = "com.apple.product-type.application";
@@ -325,6 +380,9 @@
 				Base,
 			);
 			mainGroup = F9BF20CE2A6A896E006C0C49;
+			packageReferences = (
+				86B8D0062A80716C00ED7CF4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = F9BF20D82A6A896E006C0C49 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -367,9 +425,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86B8CFFA2A80575A00ED7CF4 /* RootView.swift in Sources */,
+				86B8CFFF2A80659400ED7CF4 /* HotelListView.swift in Sources */,
 				863F8BC22A7FF138006972C7 /* ShackleApi.swift in Sources */,
+				86B8D0052A80666A00ED7CF4 /* HotelListViewModel.swift in Sources */,
+				86B8D0032A80661000ED7CF4 /* HotelCellViewModel.swift in Sources */,
 				863F8BC42A800E3B006972C7 /* ListRequest.swift in Sources */,
+				86B8CFF82A80573300ED7CF4 /* Coordinator.swift in Sources */,
 				86B8CFF22A804BB500ED7CF4 /* ApiService.swift in Sources */,
+				86B8CFFD2A80613400ED7CF4 /* HotelCellView.swift in Sources */,
 				863F8BB72A7FE723006972C7 /* HomePresenter.swift in Sources */,
 				86B8CFF52A804FDB00ED7CF4 /* Module.swift in Sources */,
 				860D97222A7A708D00E1FD72 /* SearchView.swift in Sources */,
@@ -718,6 +782,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		86B8D0062A80716C00ED7CF4 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		86B8D0072A80716C00ED7CF4 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86B8D0062A80716C00ED7CF4 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F9BF20CF2A6A896E006C0C49 /* Project object */;
 }

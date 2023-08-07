@@ -20,7 +20,9 @@ final class Injector {
         )
     )
     
-    lazy var homePresenter: HomePresenter = HomePresenter(apiService: apiService)
+    lazy var homePresenter: HomePresenter = HomePresenter(apiService: apiService, coordinator: coordinator)
+    
+    lazy var coordinator: Coordinator = Coordinator()
     
 }
 

@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-struct HDivider: View {
-    var body: some View {
-        Rectangle()
-            .frame(width: 1)
-    }
-}
-
 struct SearchView: View {
     @ObservedObject var viewModel: SearchViewModel
 
